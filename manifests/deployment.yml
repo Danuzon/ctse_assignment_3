@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster-c8e8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster-c8e8"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster-c8e8"
+    spec:
+      containers:
+        - name: "myakscluster-c8e8"
+          image: "danuzon.azurecr.io/myakscluster"
+          ports:
+          - containerPort: 5000
